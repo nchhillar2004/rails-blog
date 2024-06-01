@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <header class='fixed z-10 bg-[#f0f2f5] border-b border-[#12151b] w-full'>
+    <%= render 'layouts/header' %>
+    </header>
+    <main class="container pt-[80px] h-[100vh]">
+      <%= yield %>
+    </main>
+    <footer class='border-t border-[#12151b]'>
+    <%= render 'layouts/footer' %>
+    </footer>
+  </body>
+</html>

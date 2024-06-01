@@ -1,0 +1,10 @@
+<h1>Hello, Rails!!</h1>
+<ul class='flex flex-wrap'>
+  <% @articles.each do |article| %>
+    <li class="card transition-shadow py-2 px-4 mb-4 mr-4 lg:w-[120px] max-md:w-full">
+      <h2 class='overflow-ellipsis text-wrap whitespace-nowrap'>
+        <%= link_to article.title, article %>
+      </h2>
+    </li>
+  <% end %>
+</ul>
