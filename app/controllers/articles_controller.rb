@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @articles = Article.all
   end
@@ -6,4 +8,9 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
+
+  def new
+    
+  end
+
 end

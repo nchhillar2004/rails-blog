@@ -1,6 +1,17 @@
 <nav class='container flex justify-between items-center py-4'>
-  <div class="left">
-    <h2> <%= link_to 'RailsBlog', root_path %></h2>
+  <div class="left select-none flex items-center space-x-4">
+    <h2> <%= link_to 'RailsBlog', root_path, class:'text-white' %></h2>
+    <%= link_to 'Articles', articles_path, class:'text-white' %>
+    <%= link_to 'Write a post', new_article_path, class:'text-white' %>
   </div>
-  <div class="right"></div>
+  <div class="right">
+    <% if current_user %>
+      <%= link_to current_user.email, edit_user_registration_path, class:'text-white' %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'text-white' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class:'text-white' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class:'text-white' %>
+    <% end %>
+  </div>
 </nav>
+

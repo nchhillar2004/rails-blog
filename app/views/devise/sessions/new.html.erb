@@ -1,0 +1,31 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-8 lg:px-8">
+  <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+  </div>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"space-y-6") do |f| %>
+      <div class="field">
+        <%= f.label :email, class:'block text-sm font-medium leading-6 text-gray-900' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#1F2937] sm:text-sm sm:leading-6' %>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label :password, class:'block text-sm font-medium leading-6 text-gray-900' %>
+        <%= f.password_field :password, autocomplete: "current-password", class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#1F2937] sm:text-sm sm:leading-6' %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+      <br />
+      <div class="actions">
+        <%= f.submit "Log in", class:"flex cursor-pointer w-full justify-center rounded-md bg-[#1F2937] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#18202C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+      </div>
+    <% end %>
+  </div>
+  <p class="mt-10 text-center text-sm text-gray-500">
+    <%= render "devise/shared/links" %>
+  </p>
+</div>
