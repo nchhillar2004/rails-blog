@@ -1,16 +1,16 @@
 <nav class='container flex justify-between items-center py-4'>
-  <div class="left select-none flex items-center space-x-4">
+  <div class="left select-none flex items-center space-x-6">
     <h2> <%= link_to 'RailsBlog', root_path, class:'text-white' %></h2>
-    <%= link_to 'Articles', articles_path, class:'text-white' %>
-    <%= link_to 'Write a post', new_article_path, class:'text-white' %>
+    <%= link_to 'Articles', articles_path, class:'text-white hover:bg-[#18202C] p-2 rounded-md max-md:hidden' %>
+    <%= link_to 'Write a post', new_article_path, class:'text-white hover:bg-[#18202C] p-2 rounded-md max-md:hidden' %>
   </div>
   <div class="right">
     <% if current_user %>
-      <%= link_to current_user.email, edit_user_registration_path, class:'text-white' %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'text-white' %>
+      <%= link_to current_user.email, edit_user_registration_path, class:'text-white mr-2 max-md:hidden' %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'text-white hover:bg-[#18202C] p-2 rounded-md' %>
     <% else %>
-      <%= link_to 'Login', new_user_session_path, class:'text-white' %>
-      <%= link_to 'Sign Up', new_user_registration_path, class:'text-white' %>
+      <%= link_to 'Login', new_user_session_path, class:'text-white mr-2 hover:bg-[#18202C] p-2 rounded-md' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class:'text-white hover:bg-[#18202C] p-2 rounded-md max-md:hidden' %>
     <% end %>
   </div>
 </nav>

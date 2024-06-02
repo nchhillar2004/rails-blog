@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'support@railsblog.com'
 
   require 'devise/orm/active_record'
 
@@ -7,7 +7,6 @@ Devise.setup do |config|
   config.strip_whitespace_keys = [:email]
 
   config.skip_session_storage = [:http_auth]
-
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
   # requests for sign in and sign up, you need to get a new CSRF token
